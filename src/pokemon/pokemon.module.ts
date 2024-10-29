@@ -15,7 +15,7 @@ import { HttpModule } from '@nestjs/axios';
     GetPokemonDataUseCase,
     { provide: 'IPokemonRepository', useClass: PokemonRepository },
     {
-      provide: 'PokemonApiPort', // Token para la inyección de dependencias
+      provide: 'PokemonApiPort',
       useClass: PokemonApiAdapter,
     },
   ],

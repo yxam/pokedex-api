@@ -3,6 +3,7 @@ import {
   Injectable,
   InternalServerErrorException,
   Logger,
+  NotFoundException,
 } from '@nestjs/common';
 import { IPokemonRepository } from '../../domain/interfaces/pokemon.repository';
 import { IPokemon } from '../../domain/interfaces/pokemon.entity';
@@ -25,9 +26,12 @@ export class FindOrCreatePokemonUseCase {
       if (pokemon) {
         return pokemon;
       }
-      return this.createNewPokemonByName(name);
+      return await this.createNewPokemonByName(name);
     } catch (error) {
       this.logger.error({ message: JSON.stringify(error) });
+      if (error instanceof NotFoundException) {
+        throw new NotFoundException();
+      }
       throw new InternalServerErrorException();
     }
   }

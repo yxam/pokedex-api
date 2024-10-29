@@ -25,13 +25,13 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-Este proyecto es una API para la gestión de productos. La arquitectura Hexagonal permite desacoplar el núcleo de la aplicación de la infraestructura, facilitando el cambio de la base de datos o de otras dependencias externas. La API se construyó en [NestJS](https://nestjs.com/) y utiliza [TypeORM](https://typeorm.io/) para la integración con PostgreSQL.
+This project is an API for managing pokemons. The Hexagonal architecture allows to decouple the application core from the infrastructure, making it easy to change the database or other external dependencies. The API was built on [NestJS](https://nestjs.com/) and uses [TypeORM](https://typeorm.io/) for integration with PostgreSQL.
 
-## Requisitos Previos
+## Requirements
 
-- [Node.js](https://nodejs.org/) (versión 18 o superior)
-- [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/)
-- PostgreSQL (si decides ejecutarlo fuera de Docker)
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/)
+- PostgreSQL
 
 ## Project setup
 
@@ -46,6 +46,9 @@ $ npm install
 $ npm run start:docker
 ```
 
+# API Documentation
+- [Swagger] (http://localhost:3000/swagger)
+
 ## Run tests
 
 ```bash
@@ -57,4 +60,4 @@ $ npm run test:cov
 ```
 
 ## Contact
-Este `README.md` cubre los aspectos más importantes para que cualquier desarrollador pueda entender, instalar y ejecutar el proyecto, así como realizar pruebas y consultar la documentación.
+This `README.md` covers the most important aspects for any developer to understand, install and run the project, as well as perform tests and consult the documentation.

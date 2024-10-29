@@ -3,6 +3,7 @@ import {
   Injectable,
   InternalServerErrorException,
   Logger,
+  NotFoundException,
 } from '@nestjs/common';
 import { PokemonApiPort } from '../../domain/ports/PokemonApiPort';
 import { GetPokemonDataDto } from '../dtos/get-pokemon-data.dto';
@@ -22,6 +23,10 @@ export class GetPokemonDataUseCase {
       return data;
     } catch (error) {
       this.logger.error({ message: JSON.stringify(error) });
+      this.logger.error({ message: JSON.stringify(error.status) });
+      if (error.status === 404) {
+        throw new NotFoundException(error);
+      }
       throw new InternalServerErrorException(error);
     }
   }
