@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - DB_HOST=db
+      - DB_PORT= 5432
+      - DB_USERNAME=exampleUser
+      - DB_PASSWORD=examplePassword
+      - DB_DATABASE=pokedex
+      - POKEMON_API_URL=https://pokeapi.co/api/v2
+      - STAGE=dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: exampleUser
+      POSTGRES_PASSWORD: examplePassword
+      POSTGRES_DB: pokedex
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
