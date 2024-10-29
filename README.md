@@ -25,6 +25,13 @@
 ## Description
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este proyecto es una API para la gestión de productos. La arquitectura Hexagonal permite desacoplar el núcleo de la aplicación de la infraestructura, facilitando el cambio de la base de datos o de otras dependencias externas. La API se construyó en [NestJS](https://nestjs.com/) y utiliza [TypeORM](https://typeorm.io/) para la integración con PostgreSQL.
+
+## Requisitos Previos
+
+- [Node.js](https://nodejs.org/) (versión 18 o superior)
+- [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/)
+- PostgreSQL (si decides ejecutarlo fuera de Docker)
 
 ## Project setup
 
@@ -35,14 +42,8 @@ $ npm install
 ## Compile and run the project
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# docker development
+$ npm run start:docker
 ```
 
 ## Run tests
@@ -51,35 +52,9 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## Contact
+Este `README.md` cubre los aspectos más importantes para que cualquier desarrollador pueda entender, instalar y ejecutar el proyecto, así como realizar pruebas y consultar la documentación.
